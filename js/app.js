@@ -14,21 +14,32 @@ const Cart = function(items) {
 
 Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
-  // let newCartItem = new CartItem(addSelectedItemToCart[0], addSelectedItemToCart[1]);
-  // state.cart.items.push(newCartItem);
+  // let nextCartItem = new CartItem(addSelectedItemToCart[0], addSelectedItemToCart[1]);
+  // state.cart.items.push(nextCartItem);
+  let nextCartItem = new CartItem(product, quantity);
+  this.items.push(nextCartItem);
 };
 
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
+  let localData = JSON.stringify(state.cart.items); // you can replace state.cart.items with this.items
+  localStorage.setItem('localData', localData);
 };
 
 Cart.prototype.removeItem = function(item) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
+  // should we implement findIndex() and splice()
+  let removedItemIndex = state.cart.items.findIndex(item);
 };
 
 Cart.prototype.updateCounter = function() {
   // TODO: Update the cart count in the header nav with the number of items in the Cart
+  let cartCount = document.getElementById('itemCount');
+  let totalItems = 0;
+  for(let i = 0; i > state.cart.items; i++){
+    totalItems += state.cart.items[i].quantity;
+  }
 }
 
 // CartItem constructor
