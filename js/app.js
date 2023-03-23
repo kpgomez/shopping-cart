@@ -14,6 +14,8 @@ const Cart = function(items) {
 
 Cart.prototype.addItem = function(product, quantity) {
   // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+  // let newCartItem = new CartItem(addSelectedItemToCart[0], addSelectedItemToCart[1]);
+  // state.cart.items.push(newCartItem);
 };
 
 Cart.prototype.saveToLocalStorage = function() {
@@ -29,6 +31,7 @@ Cart.prototype.updateCounter = function() {
   // TODO: Update the cart count in the header nav with the number of items in the Cart
 }
 
+// CartItem constructor
 const CartItem = function(product, quantity) {
   this.product = product;
   this.quantity = quantity;
