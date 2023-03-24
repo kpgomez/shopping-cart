@@ -22,24 +22,36 @@ Cart.prototype.addItem = function(product, quantity) {
 
 Cart.prototype.saveToLocalStorage = function() {
   // TODO: Fill in this instance method to save the contents of the cart to localStorage
-  let localData = JSON.stringify(state.cart.items); // you can replace state.cart.items with this.items
-  localStorage.setItem('localData', localData);
+  let cart = JSON.stringify(this.items);
+  localStorage.setItem('cart', cart);
 };
 
 Cart.prototype.removeItem = function(item) {
   // TODO: Fill in this instance method to remove one item from the cart.
   // Note: You will have to decide what kind of parameter to pass in here!
   // should we implement findIndex() and splice()
-  let removedItemIndex = state.cart.items.findIndex(item);
+  // let removedItem = this.items[0].product
+  // let removedItemIndex = this.items.findIndex(removedItem);
+
+  //define item to be removed removedItem = state.cart.items.product
+  //loop over array
+  //find index of item state.cart.items.findIndex(removedItem)
+  //pass index into splice()
+  
+
 };
 
 Cart.prototype.updateCounter = function() {
   // TODO: Update the cart count in the header nav with the number of items in the Cart
   let cartCount = document.getElementById('itemCount');
+  
   let totalItems = 0;
-  for(let i = 0; i > state.cart.items; i++){
-    totalItems += state.cart.items[i].quantity;
+  for(let i = 0; i < this.items.length; i++){
+    totalItems += parseInt(this.items[i].quantity);
+    // console.log(typeof(totalItems));
   }
+  // console.log(totalItems);
+  cartCount.textContent = ` (${totalItems})`;
 }
 
 // CartItem constructor
@@ -48,7 +60,7 @@ const CartItem = function(product, quantity) {
   this.quantity = quantity;
 };
 
-// Product contructor.
+// Product contructor
 const Product = function(filePath, name) {
   this.filePath = filePath;
   this.name = name;
