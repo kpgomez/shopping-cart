@@ -3,7 +3,16 @@
 'use strict';
 
 // Set up an empty cart for use on this page.
-state.cart = new Cart([]);
+if(localStorage.cart){
+  const cartItems = JSON.parse(localStorage.getItem('cart'));
+  state.cart = new Cart(cartItems);
+  // state.cart = new Cart(JSON.parse(localStorage.cart));
+  state.cart.updateCounter(); //from DEMO
+  updateCartPreview(); //from DEMO
+} else {
+  state.cart = new Cart([]); //from DEMO
+}
+
 
 // On screen load, we call this method to put all of the product options
 // (the things in the state.allProducts array) into the drop down list.
@@ -46,7 +55,9 @@ function addSelectedItemToCart() {
   let selectedItem = document.getElementById('items').value;
   // TODO: get the quantity
   let selectedItemQuantity = document.getElementById('quantity').value;
-  state.cart.addItem(selectedItem,selectedItemQuantity);
+  if(selectedItemQuantity >= 1){
+    state.cart.addItem(selectedItem,selectedItemQuantity);
+  }
   // TODO: using those, add one item to the Cart
   // let newCartItem = new CartItem(selectedItem, selectedItemQuantity);
   // state.cart.items.push(newCartItem);
@@ -64,8 +75,10 @@ function updateCartPreview() {
   let cartElement = document.getElementById('cartContents');
   let cartPreview = document.createElement('ol');
   let cartItemPreview = document.createElement('li')
-  cartElement.appendChild(cartPreview);
-  cartPreview.appendChild(cartItemPreview);
+  if(selectedItemQuantity > 0){
+    cartElement.appendChild(cartPreview);
+    cartPreview.appendChild(cartItemPreview);
+  }
   // cartPreview.textContent = `${document.getElementById('items').value} ${document.getElementById('quantity').value}`;
   cartPreview.textContent = `${selectedItem} ${selectedItemQuantity}`;
 }
