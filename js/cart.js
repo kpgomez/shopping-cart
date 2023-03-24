@@ -75,12 +75,12 @@ function removeItemFromCart(event) {
     deleteButtons[i].addEventListener('click', removeItemFromCart);
   }
   state.cart.removeItem(targetId);
-  renderCart();
-
+  
   // TODO: Save the cart back to local storage
   state.cart.saveToLocalStorage();
-
+  
   // TODO: Re-draw the cart table
+  renderCart();
   }
 
 
