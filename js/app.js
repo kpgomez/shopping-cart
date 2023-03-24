@@ -39,6 +39,10 @@ Cart.prototype.removeItem = function (item) {
   //loop over array
   //find index of item state.cart.items.findIndex(removedItem)
   //pass index into splice()
+
+  console.log(this.items.splice(item, 1));
+  this.items.splice(item, 1)
+  state.cart.saveToLocalStorage();
   
 
 };
