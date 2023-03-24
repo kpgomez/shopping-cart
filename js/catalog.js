@@ -55,7 +55,7 @@ function addSelectedItemToCart() {
   let selectedItem = document.getElementById('items').value;
   // TODO: get the quantity
   let selectedItemQuantity = document.getElementById('quantity').value;
-  if(selectedItemQuantity >= 1){
+  if(selectedItemQuantity > 0){
     state.cart.addItem(selectedItem,selectedItemQuantity);
   }
   // TODO: using those, add one item to the Cart
