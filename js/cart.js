@@ -22,7 +22,7 @@ function renderCart() {
 // TODO: Remove all of the rows (tr) in the cart table (tbody)
 function clearCart() {
   // tableBody.removeChild(tableRow); //opposite of appendChild
-  const tableRows = document.querySelectorAll('tr');
+  const tableRows = document.querySelectorAll('#cart tbody tr');
 
   for(let i = 0; i < tableRows.length; i++){
     if(tableRows[i]){
@@ -35,7 +35,7 @@ function clearCart() {
 function showCart() {
 
   // TODO: Find the table body
-  let tableBody = document.querySelector("tbody");
+  let tableBody = document.querySelector("#cart tbody");
 
   // TODO: Iterate over the items in the cart
   // TODO: Create a TR
