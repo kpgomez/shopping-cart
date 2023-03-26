@@ -16,7 +16,6 @@ This lab combines all the of the lessons learned in previous labs and tests our 
 
 ### Links and Resources
 
-
 * [submission PR](http://xyz.com)
 
 [MDN Array Properties & Methods](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
@@ -30,9 +29,8 @@ This lab combines all the of the lessons learned in previous labs and tests our 
 ### Lighthouse Accessibility Report Score
 
 * Provide a screenshot of your score after running a Lighthouse Accessibility report.
-![Lighthouse Report](./assets/Screenshot%202023-03-24%20at%2012.20.09%20AM.png)
+![Lighthouse Report](./assets/Screenshot%202023-03-25%20at%208.47.05%20PM.png)
 
 ### Reflections and Comments
 
-* Consider including the answers to your daily journal and submission questions here
-* This is also a good place to reflect on the tools and resources used and learned
+This was a tough lab, but I enjoyed the challenge. I learned some new concepts and targeting techniques. 
