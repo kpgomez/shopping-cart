@@ -1,1 +1,64 @@
 /* TODO: Make it awesome */
+
+body {
+    background-color: navy;
+    color: white;
+    text-align: center;
+}
+header {
+    background-color: navy;
+    text-align: center;
+}
+
+body > header > h1 {
+    font-size: 50px;
+    font-family: 'Monoton', cursive;
+    text-align: center;
+    margin: 20px;
+    text-decoration: double underline;
+}
+
+ul > li {
+    display: inline-block;
+    margin: 10px 50px;
+}
+
+a {
+    font-size: 25px;
+    color: white;
+}
+
+div > header > h1 {
+    margin-top: 20px;
+    font-size: 45px;
+    font-style: italic;
+}
+
+ol {
+    font-size: 20px;
+}
+
+.copy {
+    margin: 10px;
+}
+fieldset {
+    margin-top: 50px;
+}
+legend {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+#cartContents {
+    background-color: white;
+    width: 50%;
+    color: navy;
+    margin: 20px auto;
+    line-height: 2;
+}
+table{
+    border: white 2px solid;
+    color: white;
+    font-size: 20px;
+    margin: 10px auto;
+}
+
